@@ -10,7 +10,7 @@ RUN \
 	tar xvf curl-7.52.1.tar.lzma && \
 	mv -v curl-7.52.1 curl && \
 	cd curl && \
-	patch -Np1 -i ../curl-7.52.1-valgrind_filter-1.patch && \
+	cat ../curl-7.52.1-valgrind_filter-1.patch | patch -p1 && \
 	./configure --prefix=/usr                           \
 	            --disable-static                        \
 	            --enable-threaded-resolver              \
